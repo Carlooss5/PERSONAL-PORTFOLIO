@@ -60,10 +60,10 @@ function App() {
             Hola, soy <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos</span>
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-8">
-            Ingeniero Mecánico & Desarrollador
+            Ingeniero Mecánico | Desarrollador de apps junior
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
-            Fusiono los principios de la termodinámica y el diseño industrial con el desarrollo de software para crear soluciones integrales, eficientes y tangibles.
+            Mis principales ideas e inquietudes tienen que ver con el desarrollo industrial sostenible y económicamente eficientes; asi como la creación de software que facilite la vida cotidiana. 
           </p>
           <a href="#proyectos" className="bg-white text-slate-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-xl inline-block">
             Explorar Proyectos
