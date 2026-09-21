@@ -7,8 +7,7 @@ function App() {
       id: 1,
       title: "SUELTO",
       category: "Software",
-      // Imagen temporal (luego la cambiarás por '/images/tu-imagen-suelto.jpg')
-      image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+      image: "/images/suelto.jpg", // <--- Aquí está el cambio de tu imagen,
       description: "App para gestionar dinero en efectivo de forma visual, privada e intuitiva. Simula billetes, divisas y depósitos para promover la libertad financiera en el día a día.",
       highlight: "Incluye modos Premium/Business con metas de ahorro, gráficas exportables, cierres de caja estructurados y un escáner con IA (OCR) entre otras funciones con el objetivo de facilitar la gestión financiera del cash.",
       status: "Versión Alpha",
@@ -18,7 +17,7 @@ function App() {
       id: 2,
       title: "FindCalisthenics",
       category: "Software",
-      image: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80&w=800",
+      image: "/images/findcalisthenics.jpg",
       description: "Aplicación de fisiología deportiva centrada en entrenamientos de peso corporal y mixto (barras y mancuernas), con un sistema avanzado de geolocalización.",
       highlight: "Integración nativa con OpenStreetMap que permite localizar parques cercanos por coordenadas, filtrando por instalaciones (zonas senior, tipos de barras) y sistema de reseñas comunitario.",
       status: "Prototipado",
@@ -28,7 +27,7 @@ function App() {
       id: 3,
       title: "ROAD S&S (Road Safety & Sustainability)",
       category: "Ingeniería Mecánica",
-      image: "https://images.unsplash.com/photo-1517299616551-7892330ebbe2?auto=format&fit=crop&q=80&w=800",
+      image: "/images/road_ss.jpg",
       description: "Diseño de una infraestructura vial para temporales invernales. Busca mejorar la seguridad, el flujo de tráfico y eliminar el uso de máquinas quitanieves y sal corrosiva mediante un sistema radiante.",
       highlight: "Aplicación de principios de transmisión de calor y mecánica de fluidos utilizando fluidos refrigerantes bajo el asfalto. Primeros modelados, prototipos y simulaciones realizadas en Autodesk Inventor.",
       status: "Prototipado",
@@ -38,7 +37,7 @@ function App() {
       id: 4,
       title: "ASHRAE - 2027 HVAC Design Calculations",
       category: "Ingeniería Mecánica",
-      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=800",
+      image: "/images/ashrae.jpg",
       description: "Proyecto de competición de ASHRAE para diseñar el sistema de climatización y eficiencia energética de un hotel en Taipei, Taiwán.",
       highlight: "Diseño y cálculo de instalaciones térmicas de alto rendimiento aplicando estándares normativos estadounidenses, con planos trazados en AutoCAD.",
       status: "Bases y Normativa",
@@ -57,7 +56,7 @@ function App() {
 
         <div className="max-w-5xl mx-auto relative z-10 text-center md:text-left">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-            Hola, soy <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos</span>
+            Portfolio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos G.M.</span>
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-8">
             Ingeniero Mecánico | Desarrollador de apps junior

@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
         className="bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer overflow-hidden flex flex-col group border border-gray-100"
       >
         {/* Contenedor de la Imagen con zoom al pasar el ratón */}
-        <div className="h-56 w-full overflow-hidden relative bg-gray-100">
+        <div className="h-86 w-full overflow-hidden relative bg-gray-100">
           <img 
             src={project.image} 
             alt={project.title} 
