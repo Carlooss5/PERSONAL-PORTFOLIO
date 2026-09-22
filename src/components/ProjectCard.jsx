@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const ProjectCard = ({ project }) => {
-  // Este 'estado' controla si la ventana de presentación está abierta o cerrada
   const [isOpen, setIsOpen] = useState(false);
 
   const isSoftware = project.category === 'Software';
@@ -14,8 +13,7 @@ const ProjectCard = ({ project }) => {
         onClick={() => setIsOpen(true)}
         className="bg-white rounded-2xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 cursor-pointer overflow-hidden flex flex-col group border border-gray-100"
       >
-        {/* Contenedor de la Imagen con zoom al pasar el ratón */}
-        <div className="h-86 w-full overflow-hidden relative bg-gray-100">
+        <div className="h-80 w-full overflow-hidden relative bg-gray-100">
           <img 
             src={project.image} 
             alt={project.title} 
@@ -30,6 +28,7 @@ const ProjectCard = ({ project }) => {
 
         <div className="p-6 flex flex-col flex-grow">
           <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
+          {/* Aquí mostramos solo la descripción corta */}
           <p className="text-gray-600 mb-6 flex-grow line-clamp-2">
             {project.description}
           </p>
@@ -43,7 +42,7 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
 
-      {/* MODO PRESENTACIÓN (Ventana emergente al hacer clic) */}
+      {/* MODO PRESENTACIÓN (Ventana emergente) */}
       {isOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-md transition-opacity duration-300"
@@ -51,9 +50,8 @@ const ProjectCard = ({ project }) => {
         >
           <div 
             className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fade-in-up"
-            onClick={(e) => e.stopPropagation()} // Evita que se cierre al hacer clic dentro de la ventana blanca
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Botón Cerrar */}
             <button 
               onClick={() => setIsOpen(false)}
               className="absolute top-4 right-4 bg-black/50 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition-colors z-20 backdrop-blur-sm"
@@ -61,25 +59,46 @@ const ProjectCard = ({ project }) => {
               ✕
             </button>
 
-            {/* Imagen Grande */}
             <div className="h-64 sm:h-80 w-full relative">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <h2 className="absolute bottom-6 left-8 text-4xl font-extrabold text-white">{project.title}</h2>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+              <h2 className="absolute bottom-6 left-8 text-4xl md:text-5xl font-extrabold text-white">{project.title}</h2>
             </div>
 
-            {/* Contenido de la Presentación */}
             <div className="p-8">
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                {project.description}
-              </p>
+              {/* Bloque de Descripción Larga (Párrafos) */}
+              <div className="mb-8 space-y-4">
+                {project.fullDescription ? (
+                  project.fullDescription.map((paragraph, index) => (
+                    <p key={index} className="text-lg text-gray-700 leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))
+                ) : (
+                  <p className="text-lg text-gray-700 leading-relaxed">{project.description}</p>
+                )}
+              </div>
+
+              {/* Bloque de Características Clave (Viñetas) */}
+              {project.features && (
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">ASPECTOS CLAVE DE LA APLICACIÓN</h4>
+                  <ul className="space-y-3">
+                    {project.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-700">
+                        <span className="text-indigo-500 mt-1">✦</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               
               <div className="bg-gray-50 p-6 rounded-2xl mb-8 border border-gray-100">
-                <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">Detalles Técnicos</h4>
+                <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">Detalles Técnicos & Tecnologías</h4>
                 <p className="text-gray-700 leading-relaxed">{project.highlight}</p>
               </div>
 
-              {/* Botones de Acción (GitHub, CAD, etc.) */}
               <div className="flex flex-wrap gap-4 pt-4 border-t border-gray-100">
                 {project.github && (
                   <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition-transform hover:-translate-y-1 font-semibold shadow-md">
@@ -88,8 +107,8 @@ const ProjectCard = ({ project }) => {
                   </a>
                 )}
                 {project.cadLink && (
-                  <a href={project.cadLink} className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-transform hover:-translate-y-1 font-semibold shadow-md">
-                    <span>📐</span> Visualizar Modelos CAD
+                  <a href={project.cadLink} target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-transform hover:-translate-y-1 font-semibold shadow-md">
+                    <span>📐</span> Visualizar Modelos
                   </a>
                 )}
               </div>
