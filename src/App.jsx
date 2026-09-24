@@ -39,7 +39,6 @@ function App() {
       id: 3,
       title: "ROAD S&S (Road Safety & Sustainability)",
       category: "Ingeniería Mecánica",
-
       image: "/images/logoydiseno.png", 
       description: "Diseño de una infraestructura vial para temporales invernales. Busca mejorar la seguridad, el flujo de tráfico y eliminar el uso de máquinas quitanieves y sal corrosiva mediante un sistema radiante.",
       
@@ -81,8 +80,7 @@ function App() {
           <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-emerald-500 blur-3xl animate-float-delayed"></div>
         </div>
 
-        {/* Cajas más anchas para la cabecera */}
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
+        <div className="max-w-5xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
             Portfolio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos G.M.</span>
           </h1>
@@ -113,8 +111,8 @@ function App() {
         </div>
       </header>
 
-      {/* Contenedor principal mucho más ancho: max-w-[1400px] */}
-      <main id="proyectos" className="max-w-[1400px] mx-auto px-6 py-24">
+      {/* Ancho equilibrado: max-w-6xl para filas de 2 columnas robustas */}
+      <main id="proyectos" className="max-w-6xl mx-auto px-6 py-24">
         <div className="mb-16 border-l-4 border-indigo-500 pl-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">PROYECTOS E INICIATIVAS</h2>
           <p className="text-xl text-gray-600 max-w-3xl">
@@ -122,8 +120,8 @@ function App() {
           </p>
         </div>
 
-        {/* Cuadrícula de 3 columnas en pantallas grandes (lg:grid-cols-3) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Cuadrícula estrictamente de 2 columnas (md:grid-cols-2) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
