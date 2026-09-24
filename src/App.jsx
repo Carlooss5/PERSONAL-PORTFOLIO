@@ -39,7 +39,8 @@ function App() {
       id: 3,
       title: "ROAD S&S (Road Safety & Sustainability)",
       category: "Ingeniería Mecánica",
-      image: "/images/logo+diseño.PNG",
+
+      image: "/images/logoydiseno.png", 
       description: "Diseño de una infraestructura vial para temporales invernales. Busca mejorar la seguridad, el flujo de tráfico y eliminar el uso de máquinas quitanieves y sal corrosiva mediante un sistema radiante.",
       
       fullDescription: [
@@ -75,14 +76,13 @@ function App() {
     <div className="min-h-screen font-sans selection:bg-indigo-200">
       <header className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white py-32 px-6 relative overflow-hidden">
         
-        {/* Fondo animado (Añadidas clases animate-float) */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
           <div className="absolute -top-24 -right-24 w-[500px] h-[500px] rounded-full bg-indigo-500 blur-3xl animate-float"></div>
           <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-emerald-500 blur-3xl animate-float-delayed"></div>
         </div>
 
-        {/* Textos de cabecera (Añadido animate-fade-in-up) */}
-        <div className="max-w-5xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
+        {/* Cajas más anchas para la cabecera */}
+        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
             Portfolio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos G.M.</span>
           </h1>
@@ -93,7 +93,6 @@ function App() {
             Mis principales ideas e inquietudes tienen que ver con el desarrollo industrial sostenible y económicamente eficientes; asi como la creación de software que facilite la vida cotidiana. 
           </p>
           
-          {/* BOTONERA DE CONTACTO Y REDES SOCIALES */}
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a href="#proyectos" className="bg-white text-slate-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-xl w-full sm:w-auto text-center">
               Explorar Proyectos
@@ -114,8 +113,8 @@ function App() {
         </div>
       </header>
 
-      <main id="proyectos" className="max-w-6xl mx-auto px-6 py-24">
-        {/* TITULO CON ANIMACIÓN */}
+      {/* Contenedor principal mucho más ancho: max-w-[1400px] */}
+      <main id="proyectos" className="max-w-[1400px] mx-auto px-6 py-24">
         <div className="mb-16 border-l-4 border-indigo-500 pl-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">PROYECTOS E INICIATIVAS</h2>
           <p className="text-xl text-gray-600 max-w-3xl">
@@ -123,7 +122,8 @@ function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Cuadrícula de 3 columnas en pantallas grandes (lg:grid-cols-3) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
