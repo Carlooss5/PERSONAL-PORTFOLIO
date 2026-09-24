@@ -11,7 +11,7 @@ function App() {
       description: "App para gestionar dinero en efectivo de forma visual, privada e intuitiva. Simula billetes, divisas y depósitos para promover la libertad financiera en el día a día.",
       
       fullDescription: [
-        "Suelto nace de la necesidad de devolverle al usuario el control absoluto y la privacidad sobre sus finanzas físicas. En un mundo cada vez más digitalizado, la gestión del efectivo suele quedar relegada a hojas de cálculo complejas o notas mentales que acaban perdiéndose.",
+        "Suelto nace de la necesidad de devolverle a las personas el control absoluto y la privacidad sobre su dinero real. En un mundo cada vez más digitalizado, la gestión del efectivo suele quedar relegada a hojas de cálculo complejas o notas mentales que acaban perdiéndose.",
         "El objetivo principal de esta aplicación es ofrecer una experiencia de usuario (UX) inmersiva donde el dinero físico se sienta real a través de la pantalla. El usuario interactúa con simulaciones visuales de billetes, organizándolos en 'depósitos' personalizables según sus necesidades cotidianas."
       ],
       
@@ -95,7 +95,7 @@ function App() {
           
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a href="#proyectos" className="bg-white text-slate-900 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-xl w-full sm:w-auto text-center">
-              Explorar Proyectos
+              EXPLORAR PROYECTOS
             </a>
             
             <div className="flex gap-4">
@@ -114,17 +114,19 @@ function App() {
         </div>
       </header>
 
-      {/* CAMBIO AQUÍ: max-w-7xl para ensanchar la sección de proyectos y max-w-full para el párrafo */}
+      {/* CAMBIO AQUÍ: max-w-7xl para ensanchar la sección de proyectos */}
       <main id="proyectos" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="mb-16 border-l-4 border-indigo-500 pl-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        
+        {/* HEMOS ELIMINADO EL LÍMITE DE ANCHO EN ESTE DIV */}
+        <div className="mb-16 border-l-4 border-indigo-500 pl-6 animate-fade-in-up w-full" style={{ animationDelay: '0.2s' }}>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">PROYECTOS E INICIATIVAS</h2>
-          {/* CAMBIO AQUÍ: max-w-5xl para que el párrafo ocupe mucho más a lo ancho */}
-          <p className="text-xl text-gray-600 max-w-5xl">
+          {/* CAMBIO AQUÍ: Quitamos el max-w-5xl y ponemos w-full para que ocupe todo el ancho */}
+          <p className="text-xl text-gray-600 w-full">
             Descubre e infórmate de cada uno de mis proyectos, desde aplicaciones de software hasta diseños mecánicos. Mis objetivos principales con estas iniciativas son mejorar la vida cotidiana de las personas, optimizar procesos, y promover la sostenibilidad y seguridad. Cada proyecto refleja mi pasión por la ingeniería y mi afán por la innovación.
           </p>
         </div>
 
-        {/* Las tarjetas siguen de 2 en 2, pero ahora tendrán más espacio lateral en pantallas grandes */}
+        {/* Las tarjetas siguen de 2 en 2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
