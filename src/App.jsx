@@ -80,14 +80,16 @@ function App() {
           <div className="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-emerald-500 blur-3xl animate-float-delayed"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
+        {/* CAMBIO AQUÍ: max-w-7xl para ensanchar la cabecera */}
+        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
             Portfolio de <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Carlos G.M.</span>
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold text-gray-300 mb-8">
             Ingeniero Mecánico | Desarrollador de apps junior
           </h2>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed">
+          {/* CAMBIO AQUÍ: max-w-4xl para que el párrafo se expanda más a lo ancho */}
+          <p className="text-lg md:text-xl text-gray-400 max-w-4xl mb-12 leading-relaxed">
             Mis principales ideas e inquietudes tienen que ver con el desarrollo industrial sostenible y económicamente eficientes; asi como la creación de software que facilite la vida cotidiana. 
           </p>
           
@@ -97,6 +99,7 @@ function App() {
             </a>
             
             <div className="flex gap-4">
+              {/* Tus enlaces de redes sociales igual... */}
               <a href="https://www.linkedin.com/in/carlos-garc%C3%ADa-mu%C3%B1oz-1370753ab?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="p-3 bg-white/10 rounded-full hover:bg-white/20 hover:text-emerald-400 hover:-translate-y-1 transition-all" title="LinkedIn">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </a>
@@ -111,17 +114,18 @@ function App() {
         </div>
       </header>
 
-      {/* Ancho equilibrado: max-w-6xl para filas de 2 columnas robustas */}
-      <main id="proyectos" className="max-w-6xl mx-auto px-6 py-24">
+      {/* CAMBIO AQUÍ: max-w-7xl para ensanchar la sección de proyectos y max-w-full para el párrafo */}
+      <main id="proyectos" className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-16 border-l-4 border-indigo-500 pl-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">PROYECTOS E INICIATIVAS</h2>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          {/* CAMBIO AQUÍ: max-w-5xl para que el párrafo ocupe mucho más a lo ancho */}
+          <p className="text-xl text-gray-600 max-w-5xl">
             Descubre e infórmate de cada uno de mis proyectos, desde aplicaciones de software hasta diseños mecánicos. Mis objetivos principales con estas iniciativas son mejorar la vida cotidiana de las personas, optimizar procesos, y promover la sostenibilidad y seguridad. Cada proyecto refleja mi pasión por la ingeniería y mi afán por la innovación.
           </p>
         </div>
 
-        {/* Cuadrícula estrictamente de 2 columnas (md:grid-cols-2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Las tarjetas siguen de 2 en 2, pero ahora tendrán más espacio lateral en pantallas grandes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
